@@ -16,16 +16,14 @@
 
 
 +(id) shared {
-
     static id instance = nil;
-
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-
         instance = [[self alloc] init];
     });
     return instance;
 }
+
 
 - (id)init {
     if (self = [super init]) {
@@ -74,6 +72,5 @@
     [alert setMessageText: self.selectedText];
     [alert runModal];
 }
-
 
 @end

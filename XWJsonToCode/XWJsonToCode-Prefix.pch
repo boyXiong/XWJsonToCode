@@ -1,0 +1,25 @@
+//
+//  XWJsonToCode-Prefix.pch
+//  XWJsonToCode
+//
+//  Created by key on 15/7/23.
+//  Copyright (c) 2015年 熊  伟. All rights reserved.
+//
+
+#ifndef XWJsonToCode_XWJsonToCode_Prefix_pch
+#define XWJsonToCode_XWJsonToCode_Prefix_pch
+
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
+#endif
+
+
+#ifdef __DEBUG__
+#define XWLog(...) NSLog(__VA_ARGS__)
+#else
+#define XWLog(...)
+#endif
+
+
+#endif

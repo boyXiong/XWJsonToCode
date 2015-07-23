@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EA20E2591B607ED2008BEC02 /* XWJsonToCode.m in Sources */ = {isa = PBXBuildFile; fileRef = EA20E2581B607ED2008BEC02 /* XWJsonToCode.m */; };
+		EA7DEF2B1B60832D00743797 /* XWJsonToCode.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7DEF2A1B60832D00743797 /* XWJsonToCode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EA20E2571B607ED2008BEC02 /* XWJsonToCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWJsonToCode.h; sourceTree = "<group>"; };
-		EA20E2581B607ED2008BEC02 /* XWJsonToCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWJsonToCode.m; sourceTree = "<group>"; };
+		EA7DEF291B60832D00743797 /* XWJsonToCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWJsonToCode.h; sourceTree = "<group>"; };
+		EA7DEF2A1B60832D00743797 /* XWJsonToCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWJsonToCode.m; sourceTree = "<group>"; };
+		EA7DEF2D1B60860400743797 /* XWJsonToCode-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XWJsonToCode-Prefix.pch"; sourceTree = "<group>"; };
 		EABE229A1B607D3100CCC768 /* XWJsonToCode.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XWJsonToCode.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		EABE229E1B607D3100CCC768 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -55,9 +56,10 @@
 		EABE229D1B607D3100CCC768 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA7DEF291B60832D00743797 /* XWJsonToCode.h */,
+				EA7DEF2A1B60832D00743797 /* XWJsonToCode.m */,
 				EABE229E1B607D3100CCC768 /* Info.plist */,
-				EA20E2571B607ED2008BEC02 /* XWJsonToCode.h */,
-				EA20E2581B607ED2008BEC02 /* XWJsonToCode.m */,
+				EA7DEF2D1B60860400743797 /* XWJsonToCode-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -128,7 +130,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA20E2591B607ED2008BEC02 /* XWJsonToCode.m in Sources */,
+				EA7DEF2B1B60832D00743797 /* XWJsonToCode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +223,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/XWJsonToCode/XWJsonToCode-Prefix.pch";
 				INFOPLIST_FILE = XWJsonToCode/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -233,6 +237,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/XWJsonToCode/XWJsonToCode-Prefix.pch";
 				INFOPLIST_FILE = XWJsonToCode/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -11,7 +11,6 @@
 
 @interface XWJsonToCode : NSObject
 
-@property (nonatomic,copy) NSString *selectedText;
-
+@property (nonatomic , copy) NSString * selectedText;
 
 @end
