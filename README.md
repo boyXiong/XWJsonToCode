@@ -3,7 +3,7 @@
 ### How to use（如何使用)
 
 
-![image](http://github.com/boyXiong/XWJsonToCode/raw/master/ScreenShot.gif)
+![Image](http://github.com/boyXiong/XWJsonToCode/raw/master/ScreenShot.gif)
 
 
 + ###you can set the class name prefix （可以设置类名的前缀)
