@@ -7,15 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA11B26C1B60CE6A00A653EB /* XWModelGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = EA11B26B1B60CE6A00A653EB /* XWModelGroup.m */; };
+		EA3C5D9F1B61C6B7001A7B92 /* NSTextView+XW.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3C5D9E1B61C6B7001A7B92 /* NSTextView+XW.m */; };
+		EA419C261B61DD2700ED7E37 /* XWUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA419C251B61DD2700ED7E37 /* XWUserTool.m */; };
+		EA50C4321B60D38A007B1754 /* XWMyConverTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50C4311B60D38A007B1754 /* XWMyConverTool.m */; };
+		EA6E84421B60C7F700012187 /* XWModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E84411B60C7F700012187 /* XWModel.m */; };
 		EA7DEF2B1B60832D00743797 /* XWJsonToCode.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7DEF2A1B60832D00743797 /* XWJsonToCode.m */; };
+		EAA024321B60AF630031255E /* NSDictionary+XW.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA0242E1B60AF630031255E /* NSDictionary+XW.m */; };
+		EAA024331B60AF630031255E /* NSString+XW.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA024311B60AF630031255E /* NSString+XW.m */; };
+		EAA024431B60B4060031255E /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA024421B60B4060031255E /* AppKit.framework */; };
+		EAA024451B60B4210031255E /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA024441B60B4210031255E /* Carbon.framework */; };
+		EAA024471B60B4340031255E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA024461B60B4340031255E /* Cocoa.framework */; };
+		EAC7A5961B60953E003EE1CD /* XWPrefernceSetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC7A5941B60953E003EE1CD /* XWPrefernceSetVC.m */; };
+		EAC7A5971B60953E003EE1CD /* XWPrefernceSetVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAC7A5951B60953E003EE1CD /* XWPrefernceSetVC.xib */; };
+		EAFF72AA1B6225C20061ABA4 /* XWInputJsonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFF72A81B6225C20061ABA4 /* XWInputJsonVC.m */; };
+		EAFF72AB1B6225C20061ABA4 /* XWInputJsonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAFF72A91B6225C20061ABA4 /* XWInputJsonVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA11B26A1B60CE6A00A653EB /* XWModelGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWModelGroup.h; sourceTree = "<group>"; };
+		EA11B26B1B60CE6A00A653EB /* XWModelGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWModelGroup.m; sourceTree = "<group>"; };
+		EA3C5D9D1B61C6B7001A7B92 /* NSTextView+XW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextView+XW.h"; sourceTree = "<group>"; };
+		EA3C5D9E1B61C6B7001A7B92 /* NSTextView+XW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextView+XW.m"; sourceTree = "<group>"; };
+		EA419C241B61DD2700ED7E37 /* XWUserTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWUserTool.h; sourceTree = "<group>"; };
+		EA419C251B61DD2700ED7E37 /* XWUserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWUserTool.m; sourceTree = "<group>"; };
+		EA4FB9351B61CC9B004B27F4 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		EA50C4301B60D38A007B1754 /* XWMyConverTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWMyConverTool.h; sourceTree = "<group>"; };
+		EA50C4311B60D38A007B1754 /* XWMyConverTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWMyConverTool.m; sourceTree = "<group>"; };
+		EA6E84401B60C7F700012187 /* XWModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWModel.h; sourceTree = "<group>"; };
+		EA6E84411B60C7F700012187 /* XWModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWModel.m; sourceTree = "<group>"; };
 		EA7DEF291B60832D00743797 /* XWJsonToCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWJsonToCode.h; sourceTree = "<group>"; };
 		EA7DEF2A1B60832D00743797 /* XWJsonToCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWJsonToCode.m; sourceTree = "<group>"; };
 		EA7DEF2D1B60860400743797 /* XWJsonToCode-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XWJsonToCode-Prefix.pch"; sourceTree = "<group>"; };
+		EAA0242D1B60AF630031255E /* NSDictionary+XW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+XW.h"; sourceTree = "<group>"; };
+		EAA0242E1B60AF630031255E /* NSDictionary+XW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+XW.m"; sourceTree = "<group>"; };
+		EAA024301B60AF630031255E /* NSString+XW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XW.h"; sourceTree = "<group>"; };
+		EAA024311B60AF630031255E /* NSString+XW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XW.m"; sourceTree = "<group>"; };
+		EAA024421B60B4060031255E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		EAA024441B60B4210031255E /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		EAA024461B60B4340031255E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EABE229A1B607D3100CCC768 /* XWJsonToCode.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XWJsonToCode.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		EABE229E1B607D3100CCC768 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAC7A5931B60953E003EE1CD /* XWPrefernceSetVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWPrefernceSetVC.h; sourceTree = "<group>"; };
+		EAC7A5941B60953E003EE1CD /* XWPrefernceSetVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWPrefernceSetVC.m; sourceTree = "<group>"; };
+		EAC7A5951B60953E003EE1CD /* XWPrefernceSetVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XWPrefernceSetVC.xib; sourceTree = "<group>"; };
+		EAFF72A71B6225C20061ABA4 /* XWInputJsonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWInputJsonVC.h; sourceTree = "<group>"; };
+		EAFF72A81B6225C20061ABA4 /* XWInputJsonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWInputJsonVC.m; sourceTree = "<group>"; };
+		EAFF72A91B6225C20061ABA4 /* XWInputJsonVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XWInputJsonVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -23,15 +61,88 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAA024471B60B4340031255E /* Cocoa.framework in Frameworks */,
+				EAA024451B60B4210031255E /* Carbon.framework in Frameworks */,
+				EAA024431B60B4060031255E /* AppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA3C5D9C1B61C6AC001A7B92 /* NSTextView+XW */ = {
+			isa = PBXGroup;
+			children = (
+				EA3C5D9D1B61C6B7001A7B92 /* NSTextView+XW.h */,
+				EA3C5D9E1B61C6B7001A7B92 /* NSTextView+XW.m */,
+			);
+			path = "NSTextView+XW";
+			sourceTree = "<group>";
+		};
+		EA4FB9341B61CC8E004B27F4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EA4FB9351B61CC9B004B27F4 /* common.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		EA6E843F1B60C7D900012187 /* XWModel */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E84401B60C7F700012187 /* XWModel.h */,
+				EA6E84411B60C7F700012187 /* XWModel.m */,
+				EA11B26A1B60CE6A00A653EB /* XWModelGroup.h */,
+				EA11B26B1B60CE6A00A653EB /* XWModelGroup.m */,
+			);
+			path = XWModel;
+			sourceTree = "<group>";
+		};
+		EAA0242B1B60AF630031255E /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				EA3C5D9C1B61C6AC001A7B92 /* NSTextView+XW */,
+				EAA0242C1B60AF630031255E /* NSDictionary+XW */,
+				EAA0242F1B60AF630031255E /* NSString+XW */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		EAA0242C1B60AF630031255E /* NSDictionary+XW */ = {
+			isa = PBXGroup;
+			children = (
+				EAA0242D1B60AF630031255E /* NSDictionary+XW.h */,
+				EAA0242E1B60AF630031255E /* NSDictionary+XW.m */,
+			);
+			path = "NSDictionary+XW";
+			sourceTree = "<group>";
+		};
+		EAA0242F1B60AF630031255E /* NSString+XW */ = {
+			isa = PBXGroup;
+			children = (
+				EAA024301B60AF630031255E /* NSString+XW.h */,
+				EAA024311B60AF630031255E /* NSString+XW.m */,
+			);
+			path = "NSString+XW";
+			sourceTree = "<group>";
+		};
+		EAA024391B60AF6E0031255E /* XWTool */ = {
+			isa = PBXGroup;
+			children = (
+				EA50C4301B60D38A007B1754 /* XWMyConverTool.h */,
+				EA50C4311B60D38A007B1754 /* XWMyConverTool.m */,
+				EA419C241B61DD2700ED7E37 /* XWUserTool.h */,
+				EA419C251B61DD2700ED7E37 /* XWUserTool.m */,
+			);
+			path = XWTool;
+			sourceTree = "<group>";
+		};
 		EABE22911B607D3100CCC768 = {
 			isa = PBXGroup;
 			children = (
+				EAA024461B60B4340031255E /* Cocoa.framework */,
+				EAA024441B60B4210031255E /* Carbon.framework */,
+				EAA024421B60B4060031255E /* AppKit.framework */,
 				EABE229C1B607D3100CCC768 /* XWJsonToCode */,
 				EABE229B1B607D3100CCC768 /* Products */,
 			);
@@ -48,6 +159,11 @@
 		EABE229C1B607D3100CCC768 /* XWJsonToCode */ = {
 			isa = PBXGroup;
 			children = (
+				EA4FB9341B61CC8E004B27F4 /* Common */,
+				EA6E843F1B60C7D900012187 /* XWModel */,
+				EAA024391B60AF6E0031255E /* XWTool */,
+				EAA0242B1B60AF630031255E /* Category */,
+				EAC7A5921B6094C9003EE1CD /* View */,
 				EABE229D1B607D3100CCC768 /* Supporting Files */,
 			);
 			path = XWJsonToCode;
@@ -62,6 +178,19 @@
 				EA7DEF2D1B60860400743797 /* XWJsonToCode-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EAC7A5921B6094C9003EE1CD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EAC7A5931B60953E003EE1CD /* XWPrefernceSetVC.h */,
+				EAC7A5941B60953E003EE1CD /* XWPrefernceSetVC.m */,
+				EAC7A5951B60953E003EE1CD /* XWPrefernceSetVC.xib */,
+				EAFF72A71B6225C20061ABA4 /* XWInputJsonVC.h */,
+				EAFF72A81B6225C20061ABA4 /* XWInputJsonVC.m */,
+				EAFF72A91B6225C20061ABA4 /* XWInputJsonVC.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +249,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAFF72AB1B6225C20061ABA4 /* XWInputJsonVC.xib in Resources */,
+				EAC7A5971B60953E003EE1CD /* XWPrefernceSetVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +261,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAA024321B60AF630031255E /* NSDictionary+XW.m in Sources */,
 				EA7DEF2B1B60832D00743797 /* XWJsonToCode.m in Sources */,
+				EA11B26C1B60CE6A00A653EB /* XWModelGroup.m in Sources */,
+				EA50C4321B60D38A007B1754 /* XWMyConverTool.m in Sources */,
+				EAA024331B60AF630031255E /* NSString+XW.m in Sources */,
+				EA419C261B61DD2700ED7E37 /* XWUserTool.m in Sources */,
+				EA6E84421B60C7F700012187 /* XWModel.m in Sources */,
+				EAFF72AA1B6225C20061ABA4 /* XWInputJsonVC.m in Sources */,
+				EAC7A5961B60953E003EE1CD /* XWPrefernceSetVC.m in Sources */,
+				EA3C5D9F1B61C6B7001A7B92 /* NSTextView+XW.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,10 +294,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CONFIGURATION_BUILD_DIR = "${HOME}/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEPLOYMENT_LOCATION = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -174,11 +311,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INSTALL_PATH = "${HOME}/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -200,8 +334,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEPLOYMENT_LOCATION = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -212,10 +344,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INSTALL_PATH = "${HOME}/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -223,12 +352,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "${HOME}";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XWJsonToCode/XWJsonToCode-Prefix.pch";
 				INFOPLIST_FILE = XWJsonToCode/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = xcplugin;
 			};
 			name = Debug;
@@ -237,12 +367,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "${HOME}";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XWJsonToCode/XWJsonToCode-Prefix.pch";
 				INFOPLIST_FILE = XWJsonToCode/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = xcplugin;
 			};
 			name = Release;

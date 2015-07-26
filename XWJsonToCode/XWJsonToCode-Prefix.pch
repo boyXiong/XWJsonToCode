@@ -12,6 +12,7 @@
 #ifdef __OBJC__
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
+#import "common.h"
 #endif
 
 
@@ -20,6 +21,8 @@
 #else
 #define XWLog(...)
 #endif
+
+
 
 
 #endif
