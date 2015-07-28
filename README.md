@@ -3,7 +3,7 @@
 ### How to use（如何使用)
 
 
-![image](https://raw.githubusercontent.com/boyXiong/XWJsonToCode/master/ScreenShot.gif)
+![image](https://raw.githubusercontent.com/boyXiong/XWJsonToCode/master/ScreenShot_.gif)
 
 
 
