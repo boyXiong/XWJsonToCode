@@ -136,9 +136,9 @@ static NSMutableArray *resultM;
 
                 format = [NSString stringWithFormat:@"%@",classPropertyAssignNoStar];
 
-                [tmpCoder appendString:[NSString stringWithFormat:format, intType,  model.name]];
+                [tmpCoder appendString:[NSString stringWithFormat:format, longlongType,  model.name]];
 
-                [hTextCode appendString:[NSString stringWithFormat:format, intType,  model.name]];
+                [hTextCode appendString:[NSString stringWithFormat:format, longlongType,  model.name]];
 
 
 
@@ -327,7 +327,12 @@ void converLevel(NSDictionary * json , XWModel * superModel){
             NSString *tmp = obj;
 
             if([tmp isPureInt]) {
-                model.type = intType;
+
+                if (tmp.length > 7) {
+                    model.type = longlongType;
+                }else {
+                    model.type = intType;
+                }
             }else if([tmp isPureLongLong]) {
                 model.type = longlongType;
             }else if ([tmp isPureFloat]) {
@@ -353,7 +358,13 @@ void converLevel(NSDictionary * json , XWModel * superModel){
 
             // 检测具体类型
             if([tmpStr isPureInt]) {
-                model.type = intType;
+
+                if (tmpStr.length > 7) {
+                    model.type = longlongType;
+                }else {
+                    model.type = intType;
+                }
+
             }else if([tmpStr isPureLongLong]) {
                 model.type = longlongType;
             }else if ([tmpStr isPureFloat]) {
