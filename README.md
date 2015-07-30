@@ -3,7 +3,7 @@
 ### How to use（如何使用)
 
 
-![image](https://raw.githubusercontent.com/boyXiong/XWJsonToCode/master/ScreenShot_.gif)
+![image](http://img.blog.csdn.net/20150731002154042)
 
 
 
@@ -25,6 +25,6 @@
 
 + #### 5.Passion lead to victory
 
-+ #### 6.感谢 VVDocumenter 等优秀的插件
++ #### 6.感谢 VVDocumenter 等优秀的插件，以及MJExtension等好用框架，让面向模型开发更容易
 
 
