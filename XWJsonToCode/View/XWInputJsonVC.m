@@ -13,7 +13,7 @@
 #import "XWUserTool.h"
 
 
-@interface XWInputJsonVC () <NSTextFieldDelegate>
+@interface XWInputJsonVC ()<NSTextFieldDelegate>
 
 
 @property (weak) IBOutlet NSScrollView *jsonTextView;
@@ -22,13 +22,11 @@
 
 
 /** perfernce Setting */
+@property (weak) IBOutlet NSTextField *classNamePreferText;
 
 @property (weak) IBOutlet NSButton *addExtentionBtn;
 
 @property (weak) IBOutlet NSButton *singleClassCreateFileBtn;
-
-
-@property (weak) IBOutlet NSTextField *setPrefixClassNameText;
 
 @end
 
@@ -41,16 +39,15 @@ static bool createDocument = YES;
 
 - (void)windowDidLoad {
     [super windowDidLoad];
+    
 
-    self.setPrefixClassNameText.delegate =self;
-
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange:) name:NSTextDidChangeNotification object:self.setPrefixClassNameText];
+    self.classNamePreferText.delegate = self;
 
     NSString *per = [XWUserTool toolGetValueForKey:kUserSetPerClassName];
 
     if (per) {
 
-        self.setPrefixClassNameText.stringValue = per;
+        self.classNamePreferText.stringValue = per;
     }
 
     [XWUserTool toolSaveKey:kIsAddMJExtension value:@(addMJExtension)];
@@ -58,7 +55,7 @@ static bool createDocument = YES;
 
     self.addExtentionBtn.state = addMJExtension;
     self.singleClassCreateFileBtn.state = createDocument;
-
+    
 }
 
 - (IBAction)confirmClicked:(id)sender {
@@ -94,21 +91,18 @@ static bool createDocument = YES;
     [super close];
 }
 
+
 #pragma mark - NSTextView Delegate
-
-
 - (void)textDidChange:(NSNotification *)notification{
-
 
     if ([notification isKindOfClass:[NSTextField class]]) {
 
-        NSString *perferClassName = self.setPrefixClassNameText.currentEditor.string;;
+        NSString *perferClassName = self.classNamePreferText.currentEditor.string;
+        ;
 
         [XWUserTool toolSaveKey:kUserSetPerClassName value:perferClassName];
-        [XWUserTool toolGetValueForKey:kUserSetPerClassName];
 
-
-        self.setPrefixClassNameText.placeholderString = perferClassName;
+        self.classNamePreferText.placeholderString = perferClassName;
     }
 }
 
@@ -132,23 +126,6 @@ static bool createDocument = YES;
     [XWUserTool toolGetValueForKey:kIsCreatFile];
 
     self.singleClassCreateFileBtn.state = createDocument;
-}
-
-- (void)dealloc{
-
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-
-- (void)controlTextDidChange:(NSNotification *)obj{
-
-        NSString *perferClassName = self.setPrefixClassNameText.currentEditor.string;;
-
-        [XWUserTool toolSaveKey:kUserSetPerClassName value:perferClassName];
-        [XWUserTool toolGetValueForKey:kUserSetPerClassName];
-
-
-        self.setPrefixClassNameText.placeholderString = perferClassName;
 }
 
 

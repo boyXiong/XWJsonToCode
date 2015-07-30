@@ -33,12 +33,15 @@ static NSMutableArray *resultM;
 
     NSMutableString *coder = [NSMutableString string];
 
+    //#warning 接下来，是重点了
     for (XWModelGroup *group in jsonArray) {
 
         NSMutableString *tmpCoder = [NSMutableString string];
 
+        //如果这组有类名，就添加 interface
         if (nil != group.className) {
 
+            //            NSString *format = [NSString stringWithFormat:@"%@%@%@", newLine, classInterface, newLine];
             NSString *format = [NSString stringWithFormat:@"%@", classInterface];
 
             NSString *tmp = [NSString stringWithFormat:format, group.className];
@@ -56,6 +59,7 @@ static NSMutableArray *resultM;
 
         for (XWModel * model in group.modelsM) {
 
+            //           这里可以优化 ，可以用 变量代替
 
             NSString *format = @"";
 
@@ -111,11 +115,13 @@ static NSMutableArray *resultM;
             }
         }
         
-
+        // 追加一个 @end
+        
         NSString * formatEnd = [NSString stringWithFormat:@"%@",classEnd];
         
         [tmpCoder appendString:formatEnd];
         
+        //如果这是新建立的一个类，那么加 实现
         if (nil != group.className) {
             
             NSString * format = [NSString stringWithFormat:@"%@",classImplementation];
@@ -133,24 +139,33 @@ static NSMutableArray *resultM;
 
 + (NSArray *)toolGetcoderHM:(NSArray *)jsonArray{
 
+    //1.所有代码 code
     NSMutableString *coder = [NSMutableString string];
 
+    //#warning 接下来，是重点了
     for (XWModelGroup *group in jsonArray) {
 
+        // 一个类的代码
         NSMutableString *tmpCoder = [NSMutableString string];
 
+        // .h 文件的代码
         NSMutableString *hTextCode = [NSMutableString string];
 
+        // 类名，不过没有用了
         NSMutableString *classNameString = [NSMutableString string];
 
         [classNameString appendString:hTextHeaderInfoClass];
 
+        //存放这个类需要的模型 类名
         NSMutableArray *classNameM = [NSMutableArray array];
 
+        // .m 文件的代码
         NSMutableString *mTextCode = [NSMutableString string];
 
+        //. 实现 MJExtension 的代码
         NSString *addMjCode = @"";
 
+        //如果这组有类名，就添加 interface 和建议文档
         if (nil != group.className) {
 
             NSString *format = [NSString stringWithFormat:@"%@", classInterface];
@@ -161,6 +176,7 @@ static NSMutableArray *resultM;
 
                 [tmpCoder appendString:[NSString stringWithFormat:format, group.className]];
 
+//                [hTextCode appendString:@"\n#import <Foundation/Foundation.h>\n"];
 
                 [hTextCode appendString:[NSString stringWithFormat:format, group.className]];
 
@@ -329,11 +345,24 @@ static NSMutableArray *resultM;
 
         if (nil != group.className) {
 
+//            NSString *headerformat = @"#import \"%@.h\"\n";
+//
+//            [mTextCode appendString:[NSString stringWithFormat:headerformat, group.className]];
+//
+//            if (classNameM.count > 0) {
+//                
+//                for (NSString *className in classNameM) {
+//                    
+//                    [mTextCode appendString:[NSString stringWithFormat:headerformat, className]];
+//                }
+//            }
+
             if (addMjCode.length > 2) {
 
                 BOOL flag = [[XWUserTool toolGetValueForKey:kIsAddMJExtension] boolValue];
 
-                if (flag) {                   
+                if (flag) {
+//                    [mTextCode appendString:[NSString stringWithFormat:headerformat, @"MJExtension"]];
 
                 }
             }
@@ -379,24 +408,33 @@ static NSMutableArray *resultM;
 
 + (NSArray *)toolGetCoderDocument:(NSArray *)jsonArray{
 
+    //1.所有代码 code
     NSMutableString *coder = [NSMutableString string];
 
+    //#warning 接下来，是重点了
     for (XWModelGroup *group in jsonArray) {
 
+        // 一个类的代码
         NSMutableString *tmpCoder = [NSMutableString string];
 
+        // .h 文件的代码
         NSMutableString *hTextCode = [NSMutableString string];
 
+        // 类名，不过没有用了
         NSMutableString *classNameString = [NSMutableString string];
 
         [classNameString appendString:hTextHeaderInfoClass];
 
+        //存放这个类需要的模型 类名
         NSMutableArray *classNameM = [NSMutableArray array];
 
+        // .m 文件的代码
         NSMutableString *mTextCode = [NSMutableString string];
 
+        //. 实现 MJExtension 的代码
         NSString *addMjCode = @"";
 
+        //如果这组有类名，就添加 interface 和建议文档
         if (nil != group.className) {
 
             NSString *format = [NSString stringWithFormat:@"%@", classInterface];

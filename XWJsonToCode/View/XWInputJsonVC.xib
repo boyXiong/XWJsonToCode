@@ -7,9 +7,9 @@
         <customObject id="-2" userLabel="File's Owner" customClass="XWInputJsonVC">
             <connections>
                 <outlet property="addExtentionBtn" destination="W9y-5e-L62" id="rf0-8F-ght"/>
+                <outlet property="classNamePreferText" destination="4Xr-CO-NgL" id="0nd-Ht-BiQ"/>
                 <outlet property="inputJsonTextView" destination="9JG-Lm-T8i" id="UCP-5v-D3q"/>
                 <outlet property="jsonTextView" destination="jhg-x7-Khb" id="tx3-5z-D6E"/>
-                <outlet property="setPrefixClassNameText" destination="4Xr-CO-NgL" id="MMI-38-Nug"/>
                 <outlet property="singleClassCreateFileBtn" destination="s9A-D5-5pu" id="TcJ-8g-sKX"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
@@ -114,7 +114,7 @@
                             <constraint firstAttribute="width" constant="140" id="V7Z-cx-grz"/>
                             <constraint firstAttribute="height" constant="17" id="qf4-8z-MPG"/>
                         </constraints>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Set Prefix ClassName:" id="oiw-AM-ZG3">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Set Prefer ClassName:" id="oiw-AM-ZG3">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
