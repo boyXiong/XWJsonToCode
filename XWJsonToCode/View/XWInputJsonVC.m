@@ -10,8 +10,10 @@
 #import "XWMyConverTool.h"
 #import "NSString+XW.h"
 #import "NSDictionary+XW.h"
+#import "XWUserTool.h"
 
-@interface XWInputJsonVC ()
+
+@interface XWInputJsonVC ()<NSTextFieldDelegate>
 
 
 @property (weak) IBOutlet NSScrollView *jsonTextView;
@@ -19,14 +21,41 @@
 @property (unsafe_unretained) IBOutlet NSTextView *inputJsonTextView;
 
 
+/** perfernce Setting */
+@property (weak) IBOutlet NSTextField *classNamePreferText;
+
+@property (weak) IBOutlet NSButton *addExtentionBtn;
+
+@property (weak) IBOutlet NSButton *singleClassCreateFileBtn;
+
 @end
+
+
+
+static bool addMJExtension = YES;
+static bool createDocument = YES;
 
 @implementation XWInputJsonVC
 
 - (void)windowDidLoad {
     [super windowDidLoad];
     
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+
+    self.classNamePreferText.delegate = self;
+
+    NSString *per = [XWUserTool toolGetValueForKey:kUserSetPerClassName];
+
+    if (per) {
+
+        self.classNamePreferText.stringValue = per;
+    }
+
+    [XWUserTool toolSaveKey:kIsAddMJExtension value:@(addMJExtension)];
+    [XWUserTool toolSaveKey:kIsCreatFile value:@(createDocument)];
+
+    self.addExtentionBtn.state = addMJExtension;
+    self.singleClassCreateFileBtn.state = createDocument;
+    
 }
 
 - (IBAction)confirmClicked:(id)sender {
@@ -61,6 +90,44 @@
 - (void)close{
     [super close];
 }
+
+
+#pragma mark - NSTextView Delegate
+- (void)textDidChange:(NSNotification *)notification{
+
+    if ([notification isKindOfClass:[NSTextField class]]) {
+
+        NSString *perferClassName = self.classNamePreferText.currentEditor.string;
+        ;
+
+        [XWUserTool toolSaveKey:kUserSetPerClassName value:perferClassName];
+
+        self.classNamePreferText.placeholderString = perferClassName;
+    }
+}
+
+
+- (IBAction)addMjextensionClicked:(NSButton *)sender {
+
+    addMJExtension = !addMJExtension;
+
+    [XWUserTool toolSaveKey:kIsAddMJExtension value:@(addMJExtension)];
+    [XWUserTool toolGetValueForKey:kIsAddMJExtension];
+
+    self.addExtentionBtn.state = addMJExtension;
+
+}
+
+- (IBAction)singleClassCreateFileClicked:(NSButton *)sender {
+
+    createDocument = !createDocument;
+
+    [XWUserTool toolSaveKey:kIsCreatFile value:@(createDocument)];
+    [XWUserTool toolGetValueForKey:kIsCreatFile];
+
+    self.singleClassCreateFileBtn.state = createDocument;
+}
+
 
 
 

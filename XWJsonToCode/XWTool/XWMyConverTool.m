@@ -28,6 +28,118 @@ static NSMutableArray *resultM;
 
 
 
+#pragma mark - 直接 coder
++ (NSString *)toolGetCoder:(NSArray *)jsonArray{
+
+    NSMutableString *coder = [NSMutableString string];
+
+    //#warning 接下来，是重点了
+    for (XWModelGroup *group in jsonArray) {
+
+        NSMutableString *tmpCoder = [NSMutableString string];
+
+        //如果这组有类名，就添加 interface
+        if (nil != group.className) {
+
+            //            NSString *format = [NSString stringWithFormat:@"%@%@%@", newLine, classInterface, newLine];
+            NSString *format = [NSString stringWithFormat:@"%@", classInterface];
+
+            NSString *tmp = [NSString stringWithFormat:format, group.className];
+
+            if ([coder isNewClassWithInterfaceClassName:tmp]) {
+
+                [tmpCoder appendString:[NSString stringWithFormat:format, group.className]];
+
+
+            }else{
+                continue;
+            }
+
+        }
+
+        for (XWModel * model in group.modelsM) {
+
+            //           这里可以优化 ，可以用 变量代替
+
+            NSString *format = @"";
+
+
+            if ([model.type isEqualToString:[stringType copy]]) {
+
+                format = [NSString stringWithFormat:@"%@",classPropertyCopy];
+
+                [tmpCoder appendString:[NSString stringWithFormat:format, model.name]];
+            }else if ([model.type isEqualToString:[arrayType copy]]) {
+
+                format = [NSString stringWithFormat:@"%@",classPropertyStrong];
+
+                [tmpCoder appendString:[NSString stringWithFormat:format, model.name]];
+            }else if([model.type isEqualToString:[numberType copy]]) {
+
+                format = [NSString stringWithFormat:@"%@",classPropertyAssign];
+
+
+                [tmpCoder appendString:[NSString stringWithFormat:format, model.name]];
+            }else if([model.type isEqualToString:[intType copy]]) {
+
+                format = [NSString stringWithFormat:@"%@",classPropertyAssignNoStar];
+
+                [tmpCoder appendString:[NSString stringWithFormat:format, intType,  model.name]];
+
+            }else if([model.type isEqualToString:[longlongType copy]]) {
+
+                format = [NSString stringWithFormat:@"%@",classPropertyAssignNoStar];
+
+                [tmpCoder appendString:[NSString stringWithFormat:
+                                        format, intType,  model.name]];
+
+
+            }else if([model.type isEqualToString:[floatType copy]]) {
+
+                format = [NSString stringWithFormat:@"%@",classPropertyAssignNoStar];
+
+
+                [tmpCoder appendString:[NSString stringWithFormat:format, floatType,  model.name]];
+
+            }else if([model.type isEqualToString:[BOOLType copy]]) {
+
+                format = [NSString stringWithFormat:@"%@",classPropertyAssignNoStar];
+
+                [tmpCoder appendString:[NSString stringWithFormat:format, BOOLType,  model.name]];
+            }else {
+
+                format = [NSString stringWithFormat:@"%@",classPropertyStrongNoArray];
+
+
+                [tmpCoder appendString:[NSString stringWithFormat:format, model.className,  model.name]];
+            }
+        }
+        
+        // 追加一个 @end
+        
+        NSString * formatEnd = [NSString stringWithFormat:@"%@",classEnd];
+        
+        [tmpCoder appendString:formatEnd];
+        
+        //如果这是新建立的一个类，那么加 实现
+        if (nil != group.className) {
+            
+            NSString * format = [NSString stringWithFormat:@"%@",classImplementation];
+            
+            [tmpCoder appendString:[NSString stringWithFormat:format, group.className]];
+            
+            
+            [tmpCoder appendString:formatEnd];
+        }
+        [coder appendString:tmpCoder];
+    }
+    return coder;
+    
+}
+
+
+
+
 
 #pragma mark - 文档
 

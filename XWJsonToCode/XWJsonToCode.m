@@ -7,7 +7,6 @@
 //
 
 #import "XWJsonToCode.h"
-#import "XWPrefernceSetVC.h"
 #import "XWInputJsonVC.h"
 #import "XWMyConverTool.h"
 
@@ -22,8 +21,6 @@
 
 
 @interface XWJsonToCode ()
-
-@property (nonatomic, strong) XWPrefernceSetVC * prefernceSet;
 
 @property (nonatomic, strong) XWInputJsonVC * inputJsonVC;
 
@@ -103,35 +100,19 @@
         [[editMenuItem submenu] addItem:[NSMenuItem separatorItem]];
 
         //2.2 添加用户偏好测试选项，并增加快捷键
-        NSMenuItem *newMenuItem = [[NSMenuItem alloc] initWithTitle:@"XWJsonToCodeSetting" action:@selector(showPrefreSet:) keyEquivalent:@"X"];
+        NSMenuItem *newMenuItem = [[NSMenuItem alloc] initWithTitle:@"XWJsonToCode" action:@selector(showJsonToCodeSet:) keyEquivalent:@"V"];
 
         //2.3 添加点击事件
         [newMenuItem setTarget:self];
         [[editMenuItem submenu] addItem:newMenuItem];
 
 
-        //2.4 添加输入Json
-        NSMenuItem *clickItem = [[NSMenuItem alloc] initWithTitle:@"XWJson Input Your Json" action:@selector(showInputSet:) keyEquivalent:@"V"];
-
-        //2.5 添加 点击事件
-        [clickItem setTarget:self];
-
-        //2.6 添加到菜单
-        [[editMenuItem submenu] addItem:clickItem];
-
     }
 }
 
 #pragma mark - 点击设置后, 显示的界面
--(void) showPrefreSet:(NSNotification *)noti {
-    self.prefernceSet = [[XWPrefernceSetVC alloc] initWithWindowNibName:@"XWPrefernceSetVC"];
-    [self.prefernceSet showWindow:self.prefernceSet];
-}
-
--(void) showInputSet:(NSNotification *)noti {
-
+-(void) showJsonToCodeSet:(NSNotification *)noti {
     self.needSelectedTextView = NO;
-
     self.inputJsonVC = [[XWInputJsonVC alloc] initWithWindowNibName:@"XWInputJsonVC"];
     [self.inputJsonVC showWindow:self.inputJsonVC];
 }

@@ -18,8 +18,6 @@
 		EAA024431B60B4060031255E /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA024421B60B4060031255E /* AppKit.framework */; };
 		EAA024451B60B4210031255E /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA024441B60B4210031255E /* Carbon.framework */; };
 		EAA024471B60B4340031255E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA024461B60B4340031255E /* Cocoa.framework */; };
-		EAC7A5961B60953E003EE1CD /* XWPrefernceSetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC7A5941B60953E003EE1CD /* XWPrefernceSetVC.m */; };
-		EAC7A5971B60953E003EE1CD /* XWPrefernceSetVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAC7A5951B60953E003EE1CD /* XWPrefernceSetVC.xib */; };
 		EAFF72AA1B6225C20061ABA4 /* XWInputJsonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFF72A81B6225C20061ABA4 /* XWInputJsonVC.m */; };
 		EAFF72AB1B6225C20061ABA4 /* XWInputJsonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAFF72A91B6225C20061ABA4 /* XWInputJsonVC.xib */; };
 /* End PBXBuildFile section */
@@ -48,9 +46,6 @@
 		EAA024461B60B4340031255E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EABE229A1B607D3100CCC768 /* XWJsonToCode.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XWJsonToCode.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		EABE229E1B607D3100CCC768 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EAC7A5931B60953E003EE1CD /* XWPrefernceSetVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWPrefernceSetVC.h; sourceTree = "<group>"; };
-		EAC7A5941B60953E003EE1CD /* XWPrefernceSetVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWPrefernceSetVC.m; sourceTree = "<group>"; };
-		EAC7A5951B60953E003EE1CD /* XWPrefernceSetVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XWPrefernceSetVC.xib; sourceTree = "<group>"; };
 		EAFF72A71B6225C20061ABA4 /* XWInputJsonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWInputJsonVC.h; sourceTree = "<group>"; };
 		EAFF72A81B6225C20061ABA4 /* XWInputJsonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWInputJsonVC.m; sourceTree = "<group>"; };
 		EAFF72A91B6225C20061ABA4 /* XWInputJsonVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XWInputJsonVC.xib; sourceTree = "<group>"; };
@@ -183,9 +178,6 @@
 		EAC7A5921B6094C9003EE1CD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EAC7A5931B60953E003EE1CD /* XWPrefernceSetVC.h */,
-				EAC7A5941B60953E003EE1CD /* XWPrefernceSetVC.m */,
-				EAC7A5951B60953E003EE1CD /* XWPrefernceSetVC.xib */,
 				EAFF72A71B6225C20061ABA4 /* XWInputJsonVC.h */,
 				EAFF72A81B6225C20061ABA4 /* XWInputJsonVC.m */,
 				EAFF72A91B6225C20061ABA4 /* XWInputJsonVC.xib */,
@@ -250,7 +242,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAFF72AB1B6225C20061ABA4 /* XWInputJsonVC.xib in Resources */,
-				EAC7A5971B60953E003EE1CD /* XWPrefernceSetVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +260,6 @@
 				EA419C261B61DD2700ED7E37 /* XWUserTool.m in Sources */,
 				EA6E84421B60C7F700012187 /* XWModel.m in Sources */,
 				EAFF72AA1B6225C20061ABA4 /* XWInputJsonVC.m in Sources */,
-				EAC7A5961B60953E003EE1CD /* XWPrefernceSetVC.m in Sources */,
 				EA3C5D9F1B61C6B7001A7B92 /* NSTextView+XW.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
