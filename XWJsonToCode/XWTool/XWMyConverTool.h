@@ -16,4 +16,6 @@
 /** 归档的文件 */
 + (NSArray *)toolGetCoderDocument:(NSArray *)jsonArray;
 
++ (NSArray *)toolGetcoderHM:(NSArray *)jsonArray;
+
 @end
