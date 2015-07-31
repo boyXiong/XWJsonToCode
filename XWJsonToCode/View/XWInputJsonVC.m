@@ -34,8 +34,8 @@
 
 
 
-static bool addMJExtension = YES;
-static bool createDocument = YES;
+static bool addMJExtension = NO;
+static bool createDocument = NO;
 
 @implementation XWInputJsonVC
 
@@ -67,14 +67,15 @@ static bool createDocument = YES;
     NSString *string = self.inputJsonTextView.string;
     NSString *json = [string convert];
 
-    NSDictionary *jsonDict = [NSDictionary dictionaryWithString:json];
+    id  jsonDict = [NSDictionary dictionaryWithJsonString:json];
 
-    if (!jsonDict) {
+    if ([jsonDict isKindOfClass:[NSError class]]) {
         NSAlert *info = [[NSAlert alloc] init];
         info.informativeText = @"Json format Error";
         [info runModal];
         return;
     }
+
 
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotiSureJsonName object:nil userInfo:jsonDict];
 

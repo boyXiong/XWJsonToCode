@@ -14,9 +14,9 @@
 /** 根据字符串返回一个json 字典 */
 + (NSDictionary *)dictionaryWithString:(NSString *)string;
 
++ (id)dictionaryWithJsonString:(NSString *)String;
 
 
-//- (NSDictionary *)convertLevel;
 
 
 @end

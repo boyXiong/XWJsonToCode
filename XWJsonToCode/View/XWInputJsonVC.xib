@@ -150,7 +150,7 @@
                             <constraint firstAttribute="width" constant="18" id="O5U-HA-kMi"/>
                             <constraint firstAttribute="height" constant="15" id="ZKR-lT-SZK"/>
                         </constraints>
-                        <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Kzb-Qw-j7e">
+                        <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Kzb-Qw-j7e">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -164,7 +164,7 @@
                             <constraint firstAttribute="height" constant="15" id="Ygi-wI-VGX"/>
                             <constraint firstAttribute="width" constant="18" id="gbE-QQ-knz"/>
                         </constraints>
-                        <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="iIz-U8-gnm">
+                        <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="iIz-U8-gnm">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
