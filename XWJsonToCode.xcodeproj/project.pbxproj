@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA0E2D931BA678DB00BD907D /* XWCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2D921BA678DB00BD907D /* XWCommon.m */; settings = {ASSET_TAGS = (); }; };
 		EA11B26C1B60CE6A00A653EB /* XWModelGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = EA11B26B1B60CE6A00A653EB /* XWModelGroup.m */; };
 		EA3C5D9F1B61C6B7001A7B92 /* NSTextView+XW.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3C5D9E1B61C6B7001A7B92 /* NSTextView+XW.m */; };
 		EA419C261B61DD2700ED7E37 /* XWUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA419C251B61DD2700ED7E37 /* XWUserTool.m */; };
@@ -23,13 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA0E2D911BA678DB00BD907D /* XWCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCommon.h; sourceTree = "<group>"; };
+		EA0E2D921BA678DB00BD907D /* XWCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWCommon.m; sourceTree = "<group>"; };
 		EA11B26A1B60CE6A00A653EB /* XWModelGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWModelGroup.h; sourceTree = "<group>"; };
 		EA11B26B1B60CE6A00A653EB /* XWModelGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWModelGroup.m; sourceTree = "<group>"; };
 		EA3C5D9D1B61C6B7001A7B92 /* NSTextView+XW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextView+XW.h"; sourceTree = "<group>"; };
 		EA3C5D9E1B61C6B7001A7B92 /* NSTextView+XW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextView+XW.m"; sourceTree = "<group>"; };
 		EA419C241B61DD2700ED7E37 /* XWUserTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWUserTool.h; sourceTree = "<group>"; };
 		EA419C251B61DD2700ED7E37 /* XWUserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWUserTool.m; sourceTree = "<group>"; };
-		EA4FB9351B61CC9B004B27F4 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
 		EA50C4301B60D38A007B1754 /* XWMyConverTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWMyConverTool.h; sourceTree = "<group>"; };
 		EA50C4311B60D38A007B1754 /* XWMyConverTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWMyConverTool.m; sourceTree = "<group>"; };
 		EA6E84401B60C7F700012187 /* XWModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWModel.h; sourceTree = "<group>"; };
@@ -77,7 +79,8 @@
 		EA4FB9341B61CC8E004B27F4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				EA4FB9351B61CC9B004B27F4 /* common.h */,
+				EA0E2D911BA678DB00BD907D /* XWCommon.h */,
+				EA0E2D921BA678DB00BD907D /* XWCommon.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				EAA024321B60AF630031255E /* NSDictionary+XW.m in Sources */,
 				EA7DEF2B1B60832D00743797 /* XWJsonToCode.m in Sources */,
 				EA11B26C1B60CE6A00A653EB /* XWModelGroup.m in Sources */,
+				EA0E2D931BA678DB00BD907D /* XWCommon.m in Sources */,
 				EA50C4321B60D38A007B1754 /* XWMyConverTool.m in Sources */,
 				EAA024331B60AF630031255E /* NSString+XW.m in Sources */,
 				EA419C261B61DD2700ED7E37 /* XWUserTool.m in Sources */,

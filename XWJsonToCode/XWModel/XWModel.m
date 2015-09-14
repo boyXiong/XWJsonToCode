@@ -30,6 +30,14 @@
     return [NSString stringWithFormat:@"name : %@, type : %@, className : %@ ", _name, _type, _className];
 }
 
+- (NSString *)name{
+    
+    if ([_name isEqualToString:@"id"]) {
+        _name = @"Id";
+    }
+    return _name;
+}
+
 
 @end
 

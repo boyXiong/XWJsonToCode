@@ -12,7 +12,7 @@
 #ifdef __OBJC__
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
-#import "common.h"
+#import "XWCommon.h"
 #endif
 
 

@@ -230,6 +230,7 @@
 
     //6.生成所有文件
     for (XWModelGroup * modelGroup in documentationArray){
+        
 
         if (modelGroup.className && modelGroup.hText) {
 

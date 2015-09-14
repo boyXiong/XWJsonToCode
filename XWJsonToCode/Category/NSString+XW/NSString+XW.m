@@ -32,6 +32,7 @@
 /** 判断是不是整数 */
 - (BOOL)isPureInt{
 
+    
     NSScanner* scan = [NSScanner scannerWithString:self];
 
     int val;

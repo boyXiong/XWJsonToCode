@@ -20,6 +20,7 @@ static NSMutableArray *resultM;
 
 
     resultM = [NSMutableArray array];
+    
     converLevel(json, nil);
 
     return resultM.count > 0 ? resultM : nil;
@@ -663,8 +664,10 @@ void converLevel(NSDictionary * json , XWModel * superModel){
 
         if ([obj isKindOfClass:[NSString class]]) {
 
-            XWLog(@"key:%@, value:%@", keyObj, obj);
-
+//            XWLog(@"key:%@, value:%@", keyObj, obj);
+            
+            
+            
             model.name = keyObj;
 
 
@@ -722,15 +725,22 @@ void converLevel(NSDictionary * json , XWModel * superModel){
 
         }else if ([obj isKindOfClass:[NSArray class]]) {
 
-            XWLog(@"key:%@, value:%@", keyObj, obj);
 
             model.name = keyObj;
             model.type = arrayType;
-
-            id tmp = obj[0];
-
-            if ([tmp isKindOfClass:[NSString class]]) {
+            
+            NSArray *tmpArray = obj;
+            
+            
+            
+            if (!tmpArray.count){
+            
+                model.className = nil;
+                
+            }else if ([tmpArray[0] isKindOfClass:[NSString class]]) {
+                
                 model.className = stringType;
+            
             }else {
 
                 NSString *per = [XWUserTool toolGetValueForKey:kUserSetPerClassName];;
@@ -745,7 +755,6 @@ void converLevel(NSDictionary * json , XWModel * superModel){
             }
         }else if ([obj isKindOfClass:[NSDictionary class]]){
 
-            XWLog(@"key:%@, value:%@", keyObj, obj);
 
             model.name = keyObj;
             model.type = dictionaryType;
@@ -769,15 +778,19 @@ void converLevel(NSDictionary * json , XWModel * superModel){
     
     for (XWModel *xmode in modesM) {
         
-        if ([xmode.type isEqualToString:[arrayType copy]] && ![xmode.className isEqualToString: stringType]) {
+        if (xmode.className && [xmode.type isEqualToString:[arrayType copy]] && ![xmode.className isEqualToString: stringType]) {
             
             id arrayObj = json[xmode.name];
             
             if ([arrayObj isKindOfClass:[NSArray class]]) {
                 
+                //防止为空的情况
+                NSArray *tmpArray = arrayObj;
+                if (!tmpArray.count) continue;
+                
                 id tmpJson = arrayObj[0];
                 
-                if ([tmpJson isKindOfClass:[NSDictionary class]]) {
+                if (tmpJson && [tmpJson isKindOfClass:[NSDictionary class]]) {
 
                     converLevel(tmpJson, xmode);
                 }
@@ -787,7 +800,7 @@ void converLevel(NSDictionary * json , XWModel * superModel){
             
             id dictObj = json[xmode.name];
             
-            if ([dictObj isKindOfClass:[NSDictionary class]]) {
+            if (dictObj && [dictObj isKindOfClass:[NSDictionary class]]) {
                 
                 converLevel(dictObj, xmode);
                 
