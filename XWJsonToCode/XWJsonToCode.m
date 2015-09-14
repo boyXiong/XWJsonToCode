@@ -20,7 +20,7 @@
 
 
 
-@interface XWJsonToCode ()
+@interface XWJsonToCode () <NSAlertDelegate>
 
 @property (nonatomic, strong) XWInputJsonVC * inputJsonVC;
 
@@ -31,6 +31,9 @@
 @property (nonatomic , copy) NSString * currentFilePathDocument;
 
 @property (nonatomic, assign, getter=isNeedSelectedTextView) bool needSelectedTextView;
+
+@property (nonatomic, strong) NSAlert * infoAlery;
+
 
 
 @end
@@ -147,121 +150,176 @@
 }
 
 
+- (NSAlert *)infoAlery{
+    if (nil == _infoAlery) {
+        _infoAlery = [[NSAlert alloc] init];
+        _infoAlery.messageText = @"提示";
+        
+        [_infoAlery addButtonWithTitle:@"取消"];
+        [_infoAlery addButtonWithTitle:@"我确认就是这个文件"];
+    }
+    return _infoAlery;
+}
+
 
 #pragma mark - 生成文档
 - (void)createDocument:(NSNotification *)noti{
+    
+    self.currentFilePathDocument = [self.currentFilePath documentPath];
+    
+    __block NSString *currentClassName = [self.currentFilePath substringFromIndex:(self.currentFilePathDocument.length + 1)];
 
     //1.如果发现没有，那就需要提示用户选择
     if (![self.currentView isKindOfClass:[NSTextView class]] || !self.currentFilePath) {
+        
         NSAlert *info = [[NSAlert alloc] init];
         info.informativeText = @"Please selected current mode .h file";
         [info runModal];
         return;
-    }
-
-    //2.获得用户输入的json 字典
-    NSDictionary *jsonDict = noti.userInfo;
-
-    //3.产生所有类模型
-    NSArray *jsonArray = [XWMyConverTool toolConvertLevel:jsonDict];
-
-
-    //4.获取到当前的第一个类，然后给类名
-    XWModelGroup *OneGroup = jsonArray[0];
-    self.currentFilePathDocument = [self.currentFilePath documentPath];
-    NSString *currentClassName = [self.currentFilePath substringFromIndex:(self.currentFilePathDocument.length + 1)];
-    currentClassName = [currentClassName substringFromIndex:2];
-
-    OneGroup.className = [currentClassName substringToIndex:currentClassName.length - 2];
-
-    //5.得到所有类的 h 文件，和 m 文件的 内容
-
-    BOOL flag = [[XWUserTool toolGetValueForKey:kIsCreatFile] boolValue];
-
-    if (!flag) {
-
-        NSArray *documentationArray = [XWMyConverTool toolGetcoderHM:jsonArray];
-
-        NSString *hText = hTextHeader;
-
-        NSString *mText = [NSString stringWithFormat:@"\n#import \"%@.h\"\n", OneGroup.className];
-
-        BOOL isAddMjCode = [[XWUserTool toolGetValueForKey:kIsAddMJExtension] boolValue];
-
-        if (isAddMjCode) {
-
-            mText = [NSString stringWithFormat:@"%@#import \"MJExtension.h\"\n", mText];
-
+        
+    //2.发现文件的代码过多，也就是不是新建的模型文件，有可能选错了文件，提示用户
+    }else if (self.currentView.string.length > 20 ){
+        
+        
+        NSString *infoStr = [NSString stringWithFormat:@"要生成代码的文件是:\n %@ \n 如果是这个文件,可以点\"我确认就是这个文件\"", [currentClassName substringFromIndex:2]];
+        
+        
+        self.infoAlery.informativeText = infoStr;
+        NSModalResponse returnCode = [self.infoAlery runModal];
+    
+    
+        if (returnCode == NSAlertFirstButtonReturn) {
+            return;
         }
 
+        [self ensureCreadCode:noti];
+        
+        
+    } else {
+        
+        
+        [self ensureCreadCode:noti];
+
+    }
+}
+
+//确认创建代码
+- (void)ensureCreadCode:(NSNotification *)noti{
+    
+    NSString *currentClassName = [self.currentFilePath substringFromIndex:(self.currentFilePathDocument.length + 1)];
+    
+    //2.获得用户输入的json 字典
+    NSDictionary *jsonDict = noti.userInfo;
+    
+    //3.产生所有类模型
+    NSArray *jsonArray = [XWMyConverTool toolConvertLevel:jsonDict];
+    
+    
+    //4.获取到当前的第一个类，然后给类名
+    XWModelGroup *OneGroup = jsonArray[0];
+    
+    currentClassName = [currentClassName substringFromIndex:2];
+    
+    OneGroup.className = [currentClassName substringToIndex:currentClassName.length - 2];
+    
+    //5.得到所有类的 h 文件，和 m 文件的 内容
+    
+    BOOL flag = [[XWUserTool toolGetValueForKey:kIsCreatFile] boolValue];
+    
+    if (!flag) {
+        
+        NSArray *documentationArray = [XWMyConverTool toolGetcoderHM:jsonArray];
+        
+        NSString *hText = hTextHeader;
+        
+        NSString *mText = [NSString stringWithFormat:@"\n#import \"%@.h\"\n", OneGroup.className];
+        
+        BOOL isAddMjCode = [[XWUserTool toolGetValueForKey:kIsAddMJExtension] boolValue];
+        
+        if (isAddMjCode) {
+            
+            mText = [NSString stringWithFormat:@"%@#import \"MJExtension.h\"\n", mText];
+            
+        }
+        
         //6.生成所有文件
         for (XWModelGroup * modelGroup in documentationArray){
-
+            
             if (modelGroup.className && modelGroup.hText) {
-
+                
                 hText = [NSString stringWithFormat:@"%@%@", hText , modelGroup.hText];
                 mText = [NSString stringWithFormat:@"%@%@", mText, modelGroup.mText];
             }
         }
-
+        
         NSString *hFilePath = [self.currentFilePathDocument stringByAppendingString:[NSString stringWithFormat:@"/%@.h", OneGroup.className]];
-
+        
         NSURL *writeUrl = [NSURL URLWithString:hFilePath];
-
-
+        
+        
         [hText writeToURL:writeUrl atomically:YES encoding:NSUTF8StringEncoding error:nil];
-
-
+        
+        
         NSString *mFilePath = [self.currentFilePathDocument stringByAppendingString:[NSString stringWithFormat:@"/%@.m", OneGroup.className]];
-
+        
         NSURL *mWriteUrl = [NSURL URLWithString:mFilePath];
-
+        
         [mText writeToURL:mWriteUrl atomically:YES encoding:NSUTF8StringEncoding error:nil];
         
-
+        
         
         NSAlert *info = [[NSAlert alloc] init];
         info.messageText = @"Sucess";
         info.informativeText = @"模型文件在当前文件";
         [info runModal];
-
-    }else{
-    NSArray *documentationArray = [XWMyConverTool toolGetCoderDocument:jsonArray];
-
-    //6.生成所有文件
-    for (XWModelGroup * modelGroup in documentationArray){
         
-
-        if (modelGroup.className && modelGroup.hText) {
-
-            if (self.currentFilePathDocument) {
-
-                NSString *hFilePath = [self.currentFilePathDocument stringByAppendingString:[NSString stringWithFormat:@"/%@.h", modelGroup.className]];
-
-                NSURL *writeUrl = [NSURL URLWithString:hFilePath];
-
-
-                [modelGroup.hText writeToURL:writeUrl atomically:YES encoding:NSUTF8StringEncoding error:nil];
-
-
-                NSString *mFilePath = [self.currentFilePathDocument stringByAppendingString:[NSString stringWithFormat:@"/%@.m", modelGroup.className]];
-
-                NSURL *mWriteUrl = [NSURL URLWithString:mFilePath];
-
-                [modelGroup.mText writeToURL:mWriteUrl atomically:YES encoding:NSUTF8StringEncoding error:nil];
-
+        
+        
+    }else{
+        NSArray *documentationArray = [XWMyConverTool toolGetCoderDocument:jsonArray];
+        
+        //6.生成所有文件
+        for (XWModelGroup * modelGroup in documentationArray){
+            
+            
+            if (modelGroup.className && modelGroup.hText) {
+                
+                if (self.currentFilePathDocument) {
+                    
+                    NSString *hFilePath = [self.currentFilePathDocument stringByAppendingString:[NSString stringWithFormat:@"/%@.h", modelGroup.className]];
+                    
+                    NSURL *writeUrl = [NSURL URLWithString:hFilePath];
+                    
+                    
+                    [modelGroup.hText writeToURL:writeUrl atomically:YES encoding:NSUTF8StringEncoding error:nil];
+                    
+                    
+                    NSString *mFilePath = [self.currentFilePathDocument stringByAppendingString:[NSString stringWithFormat:@"/%@.m", modelGroup.className]];
+                    
+                    NSURL *mWriteUrl = [NSURL URLWithString:mFilePath];
+                    
+                    [modelGroup.mText writeToURL:mWriteUrl atomically:YES encoding:NSUTF8StringEncoding error:nil];
+                    
+                }
+                
             }
-
         }
+        
+        NSAlert *info = [[NSAlert alloc] init];
+        info.messageText = @"Sucess";
+        NSString *infoStr = [NSString stringWithFormat:@"已经生产模型文件,在当前文件的目录下:%@", [currentClassName substringFromIndex:2]];
+        info.informativeText = infoStr;
+        [info runModal];
+        
     }
-
-    NSAlert *info = [[NSAlert alloc] init];
-    info.messageText = @"Sucess";
-    info.informativeText = @"已经生产模型文件,在当前文件的目录下";
-    [info runModal];
-    }
-
     self.needSelectedTextView = YES;
-
 }
+
+
+#pragma mark - - (BOOL)alertShowHelp:(NSAlert *)alert;
+//- (BOOL)alertShowHelp:(NSAlert *)alert{
+//
+//
+//}
+
 @end

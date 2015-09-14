@@ -71,6 +71,7 @@ static bool createDocument = NO;
 
     if ([jsonDict isKindOfClass:[NSError class]]) {
         NSAlert *info = [[NSAlert alloc] init];
+        info.messageText = @"格式错误";
         info.informativeText = @"Json format Error";
         [info runModal];
         return;
