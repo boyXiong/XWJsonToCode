@@ -75,3 +75,7 @@ extern NSString * const newLine;
 extern NSString * const hTextHeader;
 
 extern NSString * const hTextHeaderInfoClass;
+
+
+/**** ====================== *********/
+extern NSString * const kNotiInputJsonVCDelalloc;

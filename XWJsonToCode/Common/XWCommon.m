@@ -76,3 +76,8 @@ NSString * const newLine = @"\n";
 NSString * const hTextHeader  =  @"\n#import <Foundation/Foundation.h>\n";
 
 NSString * const hTextHeaderInfoClass  =  @"\n@class ";
+
+
+/***=========  通知 ==============*/
+
+NSString * const kNotiInputJsonVCDelalloc = @"kNotiInputJsonVCDelalloc";

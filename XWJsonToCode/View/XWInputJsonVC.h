@@ -10,4 +10,11 @@
 
 @interface XWInputJsonVC : NSWindowController
 
+/** 让退出作为快捷键检查 */
+- (void)beginTest;
+
+/** 是否 show */
+@property (nonatomic, assign, getter=isShowFlag) BOOL  showFlag;
+
+
 @end

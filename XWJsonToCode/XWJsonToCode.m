@@ -77,6 +77,8 @@
 
     //3 监听到用户确认点击
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createDocument:) name:kNotiSureJsonName object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inputJsonVCDelalloc) name:kNotiInputJsonVCDelalloc object:self.inputJsonVC];
 
     //4 设置菜单
     [self addSettingMenu];
@@ -113,11 +115,26 @@
     }
 }
 
+#pragma mark - lazy
+- (XWInputJsonVC *)inputJsonVC{
+    if (nil == _inputJsonVC) {
+        _inputJsonVC = [[XWInputJsonVC alloc] initWithWindowNibName:@"XWInputJsonVC"];
+    }
+    return _inputJsonVC;
+}
+
 #pragma mark - 点击设置后, 显示的界面
 -(void) showJsonToCodeSet:(NSNotification *)noti {
-    self.needSelectedTextView = NO;
-    self.inputJsonVC = [[XWInputJsonVC alloc] initWithWindowNibName:@"XWInputJsonVC"];
-    [self.inputJsonVC showWindow:self.inputJsonVC];
+    
+    if (self.inputJsonVC.showFlag){
+        [self.inputJsonVC close];
+//        [self.inputJsonVC beginTest];
+        
+    }else{
+        self.needSelectedTextView = NO;
+        [self.inputJsonVC showWindow:self.inputJsonVC];
+        self.inputJsonVC.showFlag = YES;
+    }
 }
 
 
@@ -173,6 +190,7 @@
     if (![self.currentView isKindOfClass:[NSTextView class]] || !self.currentFilePath) {
         
         NSAlert *info = [[NSAlert alloc] init];
+        info.messageText = @"info";
         info.informativeText = @"Please selected current mode .h file";
         [info runModal];
         return;
@@ -268,10 +286,10 @@
         
         
         
-        NSAlert *info = [[NSAlert alloc] init];
-        info.messageText = @"Sucess";
-        info.informativeText = @"模型文件在当前文件";
-        [info runModal];
+//        NSAlert *info = [[NSAlert alloc] init];
+//        info.messageText = @"Sucess";
+//        info.informativeText = @"模型文件在当前文件";
+//        [info runModal];
         
         
         
@@ -316,6 +334,12 @@
 }
 
 
+
+
+#pragma mark - 通知
+- (void)inputJsonVCDelalloc{
+    self.needSelectedTextView = YES;
+}
 #pragma mark - - (BOOL)alertShowHelp:(NSAlert *)alert;
 //- (BOOL)alertShowHelp:(NSAlert *)alert{
 //

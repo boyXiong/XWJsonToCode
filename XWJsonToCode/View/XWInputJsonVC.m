@@ -18,8 +18,13 @@
 
 @property (weak) IBOutlet NSScrollView *jsonTextView;
 
+
+@property (weak) IBOutlet NSScrollView *plistUrlView;
+
+
 @property (unsafe_unretained) IBOutlet NSTextView *inputJsonTextView;
 
+@property (unsafe_unretained) IBOutlet NSTextView *inputPlistUrl;
 
 /** perfernce Setting */
 
@@ -38,6 +43,13 @@ static bool addMJExtension = NO;
 static bool createDocument = NO;
 
 @implementation XWInputJsonVC
+
+
+- (void)awakeFromNib{
+    [self.inputPlistUrl setTextColor:[NSColor blackColor]];
+    [self.inputJsonTextView setTextColor:[NSColor blackColor]];
+    
+}
 
 - (void)windowDidLoad {
     [super windowDidLoad];
@@ -62,17 +74,43 @@ static bool createDocument = NO;
 }
 
 - (IBAction)confirmClicked:(id)sender {
+    
+    
+    //1.判断有没有 plist 的路径
+    NSString *plistUrlStr = self.inputPlistUrl.string;
+    
+    id jsonDict = nil;
+    
+    
+    if (plistUrlStr.length > 2 ) {
+        
+        plistUrlStr = plistUrlStr.convert;
+        
+        plistUrlStr = [NSString stringWithFormat:@"file:%@", plistUrlStr];
+        
+       NSString *uft8Str = [NSString stringWithCString:[plistUrlStr UTF8String] encoding:NSUTF8StringEncoding];
+        
+        
+        NSURL *plistUrl = [NSURL URLWithString:uft8Str];
+        
 
+        jsonDict = [NSDictionary dictionaryWithContentsOfURL:plistUrl];
+        
+        
+    }else {
+    
+        //2.如果没有url 那么就判断json有没有输入
+        NSString *string = self.inputJsonTextView.string;
+        NSString *json = [string convert];
 
-    NSString *string = self.inputJsonTextView.string;
-    NSString *json = [string convert];
+        jsonDict = [NSDictionary dictionaryWithJsonString:json];
 
-    id  jsonDict = [NSDictionary dictionaryWithJsonString:json];
-
+    }
+    
     if ([jsonDict isKindOfClass:[NSError class]]) {
         NSAlert *info = [[NSAlert alloc] init];
-        info.messageText = @"格式错误";
-        info.informativeText = @"Json format Error";
+        info.messageText = @"info";
+        info.informativeText = plistUrlStr.length > 2 ? @"JSON 格式 错误(Json format Error" : @"plist 路径 不对 " ;
         [info runModal];
         return;
     }
@@ -92,6 +130,11 @@ static bool createDocument = NO;
 }
 
 - (void)close{
+    self.showFlag = NO;
+
+    self.inputJsonTextView.string = @"";
+    self.inputPlistUrl.string = @"";
+    
     [super close];
 }
 
@@ -136,8 +179,11 @@ static bool createDocument = NO;
     self.singleClassCreateFileBtn.state = createDocument;
 }
 
+
+
 - (void)dealloc{
 
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotiInputJsonVCDelalloc object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -155,6 +201,17 @@ static bool createDocument = NO;
         self.setPrefixClassNameText.placeholderString = perferClassName;
 
 }
+
+- (void)beginTest{
+    
+    if (self.inputJsonTextView.string.length > 0 || self.inputPlistUrl.string.length  > 0) {
+        [self confirmClicked:nil];
+    }else{
+        [self close];
+    }
+    
+}
+
 
 
 

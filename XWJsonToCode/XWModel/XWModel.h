@@ -14,8 +14,9 @@
 /** 存放属性名 */
 @property (nonatomic , copy) NSString * name;
 
-/** 属性的类型 */
-//@property (nonatomic , copy) NSString * type;
+/** 属性名描述 */
+@property (nonatomic, copy) NSString * dis;
+
 
 @property (nonatomic, copy)  NSString * type;
 
