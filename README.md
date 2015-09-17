@@ -10,11 +10,14 @@
 
 
 
-
 + ###you can set the class name prefix （可以设置类名的前缀)
 
 
 + ### Coordinate with MJExtension framework, complete model development（配合MJExtension框架，面向模型开发）
+
+### How to install （如何添加, 可以使用插件管理工具，也可以Download 运行)
+![image](https://raw.githubusercontent.com/boyXiong/raw/master/picture/installDisplay.png)
+
 
 
 + ##### 1.并没有做到完美，一直在最求更完美
