@@ -27,6 +27,6 @@
 
 + ##### 6.感谢 VVDocumenter 等优秀的插件，以及MJExtension等好用框架，让面向模型开发更容易
 
-[个人博客技术分享](http://blog.csdn.net/boyXiong)
++ ##### [个人博客技术分享](http://blog.csdn.net/boyXiong)
 
 
