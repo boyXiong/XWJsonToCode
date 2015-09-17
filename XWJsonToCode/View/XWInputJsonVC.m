@@ -110,7 +110,7 @@ static bool createDocument = NO;
     if ([jsonDict isKindOfClass:[NSError class]]) {
         NSAlert *info = [[NSAlert alloc] init];
         info.messageText = @"info";
-        info.informativeText = plistUrlStr.length > 2 ? @"JSON 格式 错误(Json format Error" : @"plist 路径 不对 " ;
+        info.informativeText = plistUrlStr.length < 2 ? @"JSON 格式 错误(Json format Error" : @"plist 路径 不对 " ;
         [info runModal];
         return;
     }
