@@ -192,7 +192,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="Bdt-Uz-GJ3"/>
                         </constraints>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Input Plist url string : Exemple  /Users/key/Desktop/json.plist" placeholderString="" id="jpN-6E-NWk">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Input Plist url string : Example  /Users/key/Desktop/json.plist" placeholderString="" id="jpN-6E-NWk">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
