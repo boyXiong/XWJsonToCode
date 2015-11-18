@@ -127,6 +127,7 @@
 -(void) showJsonToCodeSet:(NSNotification *)noti {
     
     if (self.inputJsonVC.showFlag){
+        self.needSelectedTextView = YES;
         [self.inputJsonVC close];
 //        [self.inputJsonVC beginTest];
         

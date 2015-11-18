@@ -131,11 +131,17 @@ static bool createDocument = NO;
 
 - (void)close{
     self.showFlag = NO;
-
     self.inputJsonTextView.string = @"";
     self.inputPlistUrl.string = @"";
+     [[NSNotificationCenter defaultCenter] postNotificationName:kNotiInputJsonVCDelalloc object:nil];
     
     [super close];
+    
+}
+
+- (void)dismissController:(id)sender{
+     [[NSNotificationCenter defaultCenter] postNotificationName:kNotiInputJsonVCDelalloc object:nil];
+    
 }
 
 
