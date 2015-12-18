@@ -96,6 +96,8 @@ static bool createDocument = NO;
 
         jsonDict = [NSDictionary dictionaryWithContentsOfURL:plistUrl];
         
+        NSLog(@"%@", jsonDict);
+        
         
     }else {
     
