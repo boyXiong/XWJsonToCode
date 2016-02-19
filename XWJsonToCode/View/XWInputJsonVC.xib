@@ -66,10 +66,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="463" height="238"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="462" height="238"/>
+                                    <size key="minSize" width="447" height="238"/>
                                     <size key="maxSize" width="468" height="10000000"/>
                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="minSize" width="462" height="238"/>
+                                    <size key="minSize" width="447" height="238"/>
                                     <size key="maxSize" width="468" height="10000000"/>
                                 </textView>
                             </subviews>
@@ -83,7 +83,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="bcA-1i-dBT">
-                            <rect key="frame" x="447" y="1" width="16" height="238"/>
+                            <rect key="frame" x="448" y="1" width="15" height="238"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
@@ -167,7 +167,7 @@
                             <constraint firstAttribute="height" constant="15" id="Ygi-wI-VGX"/>
                             <constraint firstAttribute="width" constant="18" id="gbE-QQ-knz"/>
                         </constraints>
-                        <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="iIz-U8-gnm">
+                        <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" alignment="left" enabled="NO" inset="2" id="iIz-U8-gnm">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -219,10 +219,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="459" height="28"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="458" height="28"/>
+                                    <size key="minSize" width="443" height="28"/>
                                     <size key="maxSize" width="468" height="10000000"/>
                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="minSize" width="458" height="28"/>
+                                    <size key="minSize" width="443" height="28"/>
                                     <size key="maxSize" width="468" height="10000000"/>
                                 </textView>
                             </subviews>
@@ -236,7 +236,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="rCZ-iP-IB2">
-                            <rect key="frame" x="443" y="1" width="16" height="28"/>
+                            <rect key="frame" x="444" y="1" width="15" height="28"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>

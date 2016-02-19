@@ -17,12 +17,15 @@
 #import "XWModelGroup.h"
 
 #import "XWUserTool.h"
+#import "XWPrintCodeWC.h"
 
 
 
-@interface XWJsonToCode () <NSAlertDelegate>
+@interface XWJsonToCode ()
 
 @property (nonatomic, strong) XWInputJsonVC * inputJsonVC;
+
+@property (nonatomic, strong) XWPrintCodeWC * printCodeWC;
 
 @property (nonatomic, strong)  NSTextView * currentView;
 
@@ -123,6 +126,14 @@
     return _inputJsonVC;
 }
 
+
+- (XWPrintCodeWC *)printCodeWC{
+    if (nil == _printCodeWC) {
+        _printCodeWC = [[XWPrintCodeWC alloc] initWithWindowNibName:@"XWPrintCodeWC"];
+    }
+    return _printCodeWC;
+}
+
 #pragma mark - 点击设置后, 显示的界面
 -(void) showJsonToCodeSet:(NSNotification *)noti {
     
@@ -132,7 +143,8 @@
 //        [self.inputJsonVC beginTest];
         
     }else{
-        self.needSelectedTextView = NO;
+        NSLog(@"boyxiong:进来了  showJsonToCodeSet");
+//        self.needSelectedTextView = NO;
         [self.inputJsonVC showWindow:self.inputJsonVC];
         self.inputJsonVC.showFlag = YES;
     }
@@ -141,9 +153,12 @@
 
 #pragma mark - 根据用户键盘按键 来确认操作
 - (void)notificationInfo:(NSNotification *)noti {
+    
+    NSLog(@"boyxiong:进来了");
 
     // 1 如果需要 重新选择 TextView 就进入
     if (self.isNeedSelectedTextView) {
+        
         if ([noti.name isEqualToString:NSTextViewDidChangeSelectionNotification]) {
             if ([noti.object isKindOfClass:[NSTextView class]]) {
                 NSTextView *text = (NSTextView *)noti.object;
@@ -161,6 +176,8 @@
                 NSString *path = [url absoluteString];
 
                 self.currentFilePath = path;
+                
+                NSLog(@"boyxiong: %@", path);
             }
         }
     }
@@ -204,6 +221,7 @@
         
         
         self.infoAlery.informativeText = infoStr;
+        
         NSModalResponse returnCode = [self.infoAlery runModal];
     
     
@@ -276,14 +294,27 @@
         NSURL *writeUrl = [NSURL URLWithString:hFilePath];
         
         
-        [hText writeToURL:writeUrl atomically:YES encoding:NSUTF8StringEncoding error:nil];
+//        [hText writeToURL:writeUrl atomically:YES encoding:NSUTF8StringEncoding error:nil];
         
         
         NSString *mFilePath = [self.currentFilePathDocument stringByAppendingString:[NSString stringWithFormat:@"/%@.m", OneGroup.className]];
         
         NSURL *mWriteUrl = [NSURL URLWithString:mFilePath];
         
-        [mText writeToURL:mWriteUrl atomically:YES encoding:NSUTF8StringEncoding error:nil];
+//        [mText writeToURL:mWriteUrl atomically:YES encoding:NSUTF8StringEncoding error:nil];
+        
+        
+#pragma mark -  新版是用 复制 粘贴 不 直接写入
+        NSDictionary *codeDict = @{codeHKey : hText,
+                                   codeMKey : mText};
+        
+        [self.printCodeWC showWindow:self.printCodeWC];
+        
+        
+//        发送通知
+        [[NSNotificationCenter  defaultCenter] postNotificationName:kNotiPrintCode object:nil userInfo:codeDict];
+        
+        
         
         
         

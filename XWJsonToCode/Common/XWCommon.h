@@ -79,3 +79,11 @@ extern NSString * const hTextHeaderInfoClass;
 
 /**** ====================== *********/
 extern NSString * const kNotiInputJsonVCDelalloc;
+
+extern NSString * const kNotiPrintCode;
+
+
+
+/**** ======================= ********/
+extern NSString * const codeHKey;
+extern NSString * const codeMKey;

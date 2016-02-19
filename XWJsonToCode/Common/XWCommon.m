@@ -81,3 +81,11 @@ NSString * const hTextHeaderInfoClass  =  @"\n@class ";
 /***=========  通知 ==============*/
 
 NSString * const kNotiInputJsonVCDelalloc = @"kNotiInputJsonVCDelalloc";
+NSString * const kNotiPrintCode = @"kNotiPrintCode";
+
+
+/***========   key ==============*/
+NSString * const codeHKey = @"codeHKey";
+NSString * const codeMKey = @"codeMKey";
+
+

@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		EA0E2D931BA678DB00BD907D /* XWCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0E2D921BA678DB00BD907D /* XWCommon.m */; settings = {ASSET_TAGS = (); }; };
+		EA1021121C76F0F70044D9AF /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1021111C76F0F70044D9AF /* JavaScriptCore.framework */; };
 		EA11B26C1B60CE6A00A653EB /* XWModelGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = EA11B26B1B60CE6A00A653EB /* XWModelGroup.m */; };
 		EA3C5D9F1B61C6B7001A7B92 /* NSTextView+XW.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3C5D9E1B61C6B7001A7B92 /* NSTextView+XW.m */; };
 		EA419C261B61DD2700ED7E37 /* XWUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA419C251B61DD2700ED7E37 /* XWUserTool.m */; };
+		EA4FA2CC1C76FA2100187F83 /* XWPrintCodeWC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4FA2CA1C76FA2100187F83 /* XWPrintCodeWC.m */; settings = {ASSET_TAGS = (); }; };
+		EA4FA2CD1C76FA2100187F83 /* XWPrintCodeWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA4FA2CB1C76FA2100187F83 /* XWPrintCodeWC.xib */; settings = {ASSET_TAGS = (); }; };
 		EA50C4321B60D38A007B1754 /* XWMyConverTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50C4311B60D38A007B1754 /* XWMyConverTool.m */; };
 		EA6E84421B60C7F700012187 /* XWModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E84411B60C7F700012187 /* XWModel.m */; };
 		EA7DEF2B1B60832D00743797 /* XWJsonToCode.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7DEF2A1B60832D00743797 /* XWJsonToCode.m */; };
@@ -26,12 +29,16 @@
 /* Begin PBXFileReference section */
 		EA0E2D911BA678DB00BD907D /* XWCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCommon.h; sourceTree = "<group>"; };
 		EA0E2D921BA678DB00BD907D /* XWCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWCommon.m; sourceTree = "<group>"; };
+		EA1021111C76F0F70044D9AF /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		EA11B26A1B60CE6A00A653EB /* XWModelGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWModelGroup.h; sourceTree = "<group>"; };
 		EA11B26B1B60CE6A00A653EB /* XWModelGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWModelGroup.m; sourceTree = "<group>"; };
 		EA3C5D9D1B61C6B7001A7B92 /* NSTextView+XW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextView+XW.h"; sourceTree = "<group>"; };
 		EA3C5D9E1B61C6B7001A7B92 /* NSTextView+XW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextView+XW.m"; sourceTree = "<group>"; };
 		EA419C241B61DD2700ED7E37 /* XWUserTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWUserTool.h; sourceTree = "<group>"; };
 		EA419C251B61DD2700ED7E37 /* XWUserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWUserTool.m; sourceTree = "<group>"; };
+		EA4FA2C91C76FA2100187F83 /* XWPrintCodeWC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWPrintCodeWC.h; sourceTree = "<group>"; };
+		EA4FA2CA1C76FA2100187F83 /* XWPrintCodeWC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWPrintCodeWC.m; sourceTree = "<group>"; };
+		EA4FA2CB1C76FA2100187F83 /* XWPrintCodeWC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XWPrintCodeWC.xib; sourceTree = "<group>"; };
 		EA50C4301B60D38A007B1754 /* XWMyConverTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWMyConverTool.h; sourceTree = "<group>"; };
 		EA50C4311B60D38A007B1754 /* XWMyConverTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWMyConverTool.m; sourceTree = "<group>"; };
 		EA6E84401B60C7F700012187 /* XWModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWModel.h; sourceTree = "<group>"; };
@@ -58,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA1021121C76F0F70044D9AF /* JavaScriptCore.framework in Frameworks */,
 				EAA024471B60B4340031255E /* Cocoa.framework in Frameworks */,
 				EAA024451B60B4210031255E /* Carbon.framework in Frameworks */,
 				EAA024431B60B4060031255E /* AppKit.framework in Frameworks */,
@@ -67,6 +75,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA1021131C76F1000044D9AF /* Formworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA1021111C76F0F70044D9AF /* JavaScriptCore.framework */,
+				EAA024461B60B4340031255E /* Cocoa.framework */,
+				EAA024441B60B4210031255E /* Carbon.framework */,
+				EAA024421B60B4060031255E /* AppKit.framework */,
+			);
+			name = Formworks;
+			sourceTree = "<group>";
+		};
 		EA3C5D9C1B61C6AC001A7B92 /* NSTextView+XW */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,9 +157,7 @@
 		EABE22911B607D3100CCC768 = {
 			isa = PBXGroup;
 			children = (
-				EAA024461B60B4340031255E /* Cocoa.framework */,
-				EAA024441B60B4210031255E /* Carbon.framework */,
-				EAA024421B60B4060031255E /* AppKit.framework */,
+				EA1021131C76F1000044D9AF /* Formworks */,
 				EABE229C1B607D3100CCC768 /* XWJsonToCode */,
 				EABE229B1B607D3100CCC768 /* Products */,
 			);
@@ -184,6 +201,9 @@
 				EAFF72A71B6225C20061ABA4 /* XWInputJsonVC.h */,
 				EAFF72A81B6225C20061ABA4 /* XWInputJsonVC.m */,
 				EAFF72A91B6225C20061ABA4 /* XWInputJsonVC.xib */,
+				EA4FA2C91C76FA2100187F83 /* XWPrintCodeWC.h */,
+				EA4FA2CA1C76FA2100187F83 /* XWPrintCodeWC.m */,
+				EA4FA2CB1C76FA2100187F83 /* XWPrintCodeWC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -245,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAFF72AB1B6225C20061ABA4 /* XWInputJsonVC.xib in Resources */,
+				EA4FA2CD1C76FA2100187F83 /* XWPrintCodeWC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +286,7 @@
 				EA6E84421B60C7F700012187 /* XWModel.m in Sources */,
 				EAFF72AA1B6225C20061ABA4 /* XWInputJsonVC.m in Sources */,
 				EA3C5D9F1B61C6B7001A7B92 /* NSTextView+XW.m in Sources */,
+				EA4FA2CC1C76FA2100187F83 /* XWPrintCodeWC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
