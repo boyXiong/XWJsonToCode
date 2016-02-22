@@ -106,6 +106,8 @@ static bool createDocument = NO;
         NSString *json = [string convert];
 
         jsonDict = [NSDictionary dictionaryWithJsonString:json];
+        
+        
 
     }
     
@@ -116,7 +118,6 @@ static bool createDocument = NO;
         [info runModal];
         return;
     }
-
 
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotiSureJsonName object:nil userInfo:jsonDict];
 

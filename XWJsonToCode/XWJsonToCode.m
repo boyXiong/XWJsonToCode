@@ -251,13 +251,21 @@
     //3.产生所有类模型
     NSArray *jsonArray = [XWMyConverTool toolConvertLevel:jsonDict];
     
+    NSLog(@"boyxiong 01 :jsonArray%@", jsonArray);
+    
     
     //4.获取到当前的第一个类，然后给类名
     XWModelGroup *OneGroup = jsonArray[0];
     
+    NSLog(@"boyxiong 02 : %@", OneGroup);
+    
     currentClassName = [currentClassName substringFromIndex:2];
     
     OneGroup.className = [currentClassName substringToIndex:currentClassName.length - 2];
+    
+    
+    NSLog(@"boyxiong 03 : %@", OneGroup);
+
     
     //5.得到所有类的 h 文件，和 m 文件的 内容
     
@@ -266,6 +274,8 @@
     if (!flag) {
         
         NSArray *documentationArray = [XWMyConverTool toolGetcoderHM:jsonArray];
+        
+        NSLog(@"boyxiong:array: %@", documentationArray);
         
         NSString *hText = hTextHeader;
         
@@ -279,7 +289,7 @@
             
         }
         
-        //6.生成所有文件
+//        6.生成所有文件
         for (XWModelGroup * modelGroup in documentationArray){
             
             if (modelGroup.className && modelGroup.hText) {
@@ -289,6 +299,9 @@
             }
         }
         
+        
+        NSLog(@"boyxiong:OK: %@", documentationArray);
+
         NSString *hFilePath = [self.currentFilePathDocument stringByAppendingString:[NSString stringWithFormat:@"/%@.h", OneGroup.className]];
         
         NSURL *writeUrl = [NSURL URLWithString:hFilePath];
@@ -318,10 +331,10 @@
         
         
         
-//        NSAlert *info = [[NSAlert alloc] init];
-//        info.messageText = @"Sucess";
-//        info.informativeText = @"模型文件在当前文件";
-//        [info runModal];
+        NSAlert *info = [[NSAlert alloc] init];
+        info.messageText = @"Sucess";
+        info.informativeText = @"模型文件在当前文件";
+        [info runModal];
         
         
         

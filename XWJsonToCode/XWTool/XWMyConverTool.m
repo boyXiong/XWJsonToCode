@@ -204,8 +204,10 @@ static NSMutableArray *resultM;
                 NSString *tmp = [NSString stringWithFormat:@"@\"%@\" : [%@ class],", model.name, model.className];
 
                 addMjCode = [NSString stringWithFormat:@"%@%@",addMjCode, tmp];
-
-                if (![model.className isEqualToString:stringType]) {
+                
+                // 防止 null
+                if (![model.className isEqualToString:stringType] && model.className.length > 0) {
+                    
                     [classNameM addObject:model.className];
                 }
 
@@ -268,8 +270,13 @@ static NSMutableArray *resultM;
 
 
                 [classNameString appendString:[NSString stringWithFormat:@"%@,",model.className]];
+                
+                //防止空
+                if (model.className.length > 0) {
+                    
+                    [classNameM addObject:model.className];
 
-                [classNameM addObject:model.className];
+                }
 
             }
         }
@@ -661,11 +668,18 @@ void converLevel(NSDictionary * json , XWModel * superModel){
         id keyObj = enumeratorKey.nextObject;
 
         XWModel *model = [[XWModel alloc] init];
-
-        if ([obj isKindOfClass:[NSString class]]) {
+        
+        
+        // 增加 空 类型
+        if ([obj isKindOfClass:[NSNull class]]) {
+            
+            model.name = keyObj;
+            model.type = stringType;
+            
+            
+        }else if ([obj isKindOfClass:[NSString class]]) {
 
 //            XWLog(@"key:%@, value:%@", keyObj, obj);
-            
             
             
             model.name = keyObj;
