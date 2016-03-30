@@ -96,7 +96,7 @@ static bool createDocument = NO;
 
         jsonDict = [NSDictionary dictionaryWithContentsOfURL:plistUrl];
         
-        NSLog(@"%@", jsonDict);
+//        NSLog(@"%@", jsonDict);
         
         
     }else {
@@ -112,11 +112,21 @@ static bool createDocument = NO;
     }
     
     if ([jsonDict isKindOfClass:[NSError class]]) {
+        
         NSAlert *info = [[NSAlert alloc] init];
         info.messageText = @"info";
         info.informativeText = plistUrlStr.length < 2 ? @"JSON 格式 错误(Json format Error" : @"plist 路径 不对 " ;
         [info runModal];
         return;
+    }else if ([jsonDict isKindOfClass:[NSArray class]]){
+        
+        NSAlert *info = [[NSAlert alloc] init];
+        info.messageText = @"info";
+        info.informativeText = @"目前不支持以数组开头";
+        [info runModal];
+        return;
+
+        
     }
 
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotiSureJsonName object:nil userInfo:jsonDict];
