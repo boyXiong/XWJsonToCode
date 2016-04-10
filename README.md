@@ -7,14 +7,16 @@
 #### How to use（如何使用)
 
 <div  align="center"> 
-<img src="http://img.blog.csdn.net/20150731002154042" width = "600" height = "500" alt="图片名称" align=center />
+<img src="http://img.blog.csdn.net/20150731002154042" width = "450" height = "300" alt="图片名称" align=center />
 </div>
 
+</br>
+</br>
 
 <div  align="center"> 
-<img src="http://img.blog.csdn.net/20150917193217724" width = "600" height = "500" alt="图片名称" align=center />
+<img src="http://img.blog.csdn.net/20150917193217724" width = "600" height = "400" alt="图片名称" align=center />
 </div>
-
+</br>
 
 
 
@@ -28,8 +30,9 @@
 
 ### How to install （如何添加, 可以使用插件管理工具，也可以Download 运行)
 
+</br>
 <div  align="center"> 
-<img src="https://raw.githubusercontent.com/boyXiong/raw/master/picture/installDisplay.png" width = "600" height = "500" alt="图片名称" align=center />
+<img src="https://raw.githubusercontent.com/boyXiong/raw/master/picture/installDisplay.png" width = "450" height = "400" alt="图片名称" align=center />
 </div>
 
 
