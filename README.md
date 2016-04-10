@@ -6,36 +6,35 @@
 ---
 
 ### How to use（如何使用)
----
 
-![image](http://img.blog.csdn.net/20150731002154042)
-
-![image](http://img.blog.csdn.net/20150917193217724)
-
+<div  align="center"> 
+<img src="http://img.blog.csdn.net/20150731002154042" width = "300" height = "200" alt="图片名称" align=center />
+</div>
 
 
+<div  align="center"> 
+<img src="http://img.blog.csdn.net/20150917193217724" width = "300" height = "200" alt="图片名称" align=center />
+</div>
 
-+ #### you can set the class name prefix （可以设置类名的前缀)
 
 
-+ #### Coordinate with MJExtension framework, complete model development（配合MJExtension框架，面向模型开发）
 
----
----
++ ##### you can set the class name prefix （可以设置类名的前缀)
+
+
++ ##### Coordinate with MJExtension framework, complete model development（配合MJExtension框架，面向模型开发）
+
 ---
 
 
 ### How to install （如何添加, 可以使用插件管理工具，也可以Download 运行)
+
+<div  align="center"> 
+<img src="https://raw.githubusercontent.com/boyXiong/raw/master/picture/installDisplay.png" width = "300" height = "200" alt="图片名称" align=center />
+</div>
+
+
 ---
-
-![image](https://raw.githubusercontent.com/boyXiong/raw/master/picture/installDisplay.png)
-
----
----
----
-
-
-
 + ##### 1.并没有做到完美，一直在最求更完美
 
 + ##### 2.如果你有更好的建议,希望你能Issues我,谢谢
