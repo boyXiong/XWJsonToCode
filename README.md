@@ -28,7 +28,7 @@
 ---
 
 
-### How to install （如何添加, 可以使用插件管理工具，也可以Download 运行)
+### How to install （如何添加, 可以使用插件管理工具，也可以Download command + B 编译)
 
 </br>
 <div  align="center"> 
