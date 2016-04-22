@@ -208,8 +208,8 @@
     if (![self.currentView isKindOfClass:[NSTextView class]] || !self.currentFilePath) {
         
         NSAlert *info = [[NSAlert alloc] init];
-        info.messageText = @"info";
-        info.informativeText = @"Please selected current mode .h file";
+        info.messageText = @"信息";
+        info.informativeText = @"请在右边栏, 选中对应的模型文件, 确认类名";
         [info runModal];
         return;
         
@@ -333,7 +333,7 @@
         
         NSAlert *info = [[NSAlert alloc] init];
         info.messageText = @"Sucess";
-        info.informativeText = @"模型文件在当前文件";
+        info.informativeText = @"已经生成对应的代码,复制粘贴，就可以了";
         [info runModal];
         
         
@@ -368,9 +368,15 @@
             }
         }
         
+//        NSAlert *info = [[NSAlert alloc] init];
+//        info.messageText = @"Sucess";
+//        NSString *infoStr = [NSString stringWithFormat:@"已经生产模型文件,在当前文件的目录下:%@", [currentClassName substringFromIndex:2]];
+//        info.informativeText = infoStr;
+//        [info runModal];
+        
         NSAlert *info = [[NSAlert alloc] init];
         info.messageText = @"Sucess";
-        NSString *infoStr = [NSString stringWithFormat:@"已经生产模型文件,在当前文件的目录下:%@", [currentClassName substringFromIndex:2]];
+        NSString *infoStr = [NSString stringWithFormat:@"已经生成对应的代码,复制粘贴，就可以了"];
         info.informativeText = infoStr;
         [info runModal];
         
